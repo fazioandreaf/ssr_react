@@ -1,12 +1,13 @@
 import React from "react";
+import { RecoilRoot } from "recoil";
 import { CounterButton } from "../CounterButton";
-import { CounterProvider } from "../CounterProvider";
+import { DisplayCount } from "../DisplayCount";
 
 export const Home = () => {
 	return (
-		<CounterProvider>
+		<RecoilRoot>
 			<h1>Home</h1>
 			<CounterButton />
-		</CounterProvider>
+		</RecoilRoot>
 	);
 };
