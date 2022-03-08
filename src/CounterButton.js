@@ -1,11 +1,9 @@
-import { useRecoilState, useRecoilValue } from "recoil";
+import { useRecoilState } from "recoil";
 import { incrementByState } from "./incrementByState";
-import { useSelector, useDispatch } from "react-redux";
-import { getNumberOfClicks } from "./selector";
+import { useDispatch } from "react-redux";
 import { counterButtonClicked } from "./action";
 
 export const CounterButton = () => {
-	const numberOfClicks = useSelector(getNumberOfClicks);
 	const dispatch = useDispatch();
 	const [incrementBy, setIncrementBy] = useRecoilState(incrementByState);
 

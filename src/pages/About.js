@@ -7,7 +7,6 @@ export const About = () => {
 	return (
 		<Provider store={store}>
 			<h1>About</h1>
-			<CounterButton />
 		</Provider>
 	);
 };

@@ -6,7 +6,6 @@ export const Home = () => {
 	return (
 		<RecoilRoot>
 			<h1>Home</h1>
-			<CounterButton />
 		</RecoilRoot>
 	);
 };
