@@ -1,12 +1,20 @@
 import React from "react";
-import { Switch, Route, Link } from "react-router-dom";
-import { Home } from "./pages/Home";
-import { About } from "./pages/About";
-import { Articles } from "./pages/Articles";
+import {
+	BrowserRouter,
+	Switch,
+	Route,
+	Link,
+	lazy,
+	Suspance,
+} from "react-router-dom";
+
+const Home = lazy(() => import("./Home"));
+const About = lazy(() => import("./About"));
+const Articles = lazy(() => import("./Articles"));
 
 const App = () => {
 	return (
-		<>
+		<BrowserRouter>
 			<h1>Server-Side Rendering Example</h1>
 			<ul>
 				<li>
@@ -19,18 +27,20 @@ const App = () => {
 					<Link to='/articles'>Articles</Link>
 				</li>
 			</ul>
-			<Switch>
-				<Route path='/' exact>
-					<Home />
-				</Route>
-				<Route path='/about'>
-					<About />
-				</Route>
-				<Route path='/articles'>
-					<Articles />
-				</Route>
-			</Switch>
-		</>
+			<Suspance fallback={<p>Loading Components...</p>}>
+				<Switch>
+					<Route path='/' exact>
+						<Home />
+					</Route>
+					<Route path='/about'>
+						<About />
+					</Route>
+					<Route path='/articles'>
+						<Articles />
+					</Route>
+				</Switch>
+			</Suspance>
+		</BrowserRouter>
 	);
 };
 

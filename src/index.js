@@ -1,22 +1,14 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom";
-import "./index.css";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
-import { InitialDataContext } from "./InitialDataContext";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
 
-ReactDOM.hydrate(
-	<React.StrictMode>
-		<InitialDataContext.Provider
-			value={(window && window.preloadedData) || { _data: {} }}
-		>
-			<BrowserRouter>
-				<App />
-			</BrowserRouter>
-		</InitialDataContext.Provider>
-	</React.StrictMode>,
-	document.getElementById("root")
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
