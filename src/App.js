@@ -1,11 +1,10 @@
 import React from "react";
 import { Switch, Route, Link } from "react-router-dom";
-
 import { Home } from "./pages/Home";
-import { Articles } from "./pages/Articles";
 import { About } from "./pages/About";
+import { Articles } from "./pages/Articles";
 
-function App() {
+const App = () => {
 	return (
 		<>
 			<h1>Server-Side Rendering Example</h1>
@@ -24,15 +23,15 @@ function App() {
 				<Route path='/' exact>
 					<Home />
 				</Route>
-				<Route path='/about' exact>
+				<Route path='/about'>
 					<About />
 				</Route>
-				<Route path='/articles' exact>
+				<Route path='/articles'>
 					<Articles />
 				</Route>
 			</Switch>
 		</>
 	);
-}
+};
 
 export default App;
